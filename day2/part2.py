@@ -19,4 +19,4 @@ for boxid in boxid_list:
                 if debug_rdout: print('boxid',boxid)
                 common = ''.join([i for i, j in zip(boxid, other_boxid) if i == j])
 
-with open('output.txt','w') as f: f.write(common)
+with open('part2.qz','w') as f: f.write(common)
