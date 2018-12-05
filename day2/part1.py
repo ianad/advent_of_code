@@ -18,5 +18,7 @@ for boxid in boxid_list:
 print('total doubles',double_boxids)
 print('total triples',triple_boxids)
 
-checksum = double_boxids * triple_boxids
+checksum = str(double_boxids * triple_boxids)
 print('checksum',checksum)
+
+with open('part1.txt','w') as f: f.write(checksum)
