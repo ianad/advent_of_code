@@ -1,5 +1,8 @@
 from collections import Counter
 
+debug_in = False
+debug_out = False
+
 with open('input.txt') as f:
     boxid_list = f.read().splitlines()
 
@@ -11,12 +14,14 @@ for boxid in boxid_list:
     triple_letters = len(list(filter(lambda x:x==3, Counter(boxid).values())))
     if double_letters >= 1: double_boxids += 1;
     if triple_letters >= 1: triple_boxids += 1;
-    print('boxid',boxid)
-    print('doubles',double_letters)
-    print('triples',triple_letters)
+    if debug_out:
+        print('boxid',boxid)
+        print('doubles',double_letters)
+        print('triples',triple_letters)
 
-print('total doubles',double_boxids)
-print('total triples',triple_boxids)
+if debug_out:
+    print('total doubles',double_boxids)
+    print('total triples',triple_boxids)
 
 checksum = str(double_boxids * triple_boxids)
 print('checksum',checksum)
